@@ -1,0 +1,43 @@
+import sys 
+
+n = sys.stdin.readline()
+n = int(n)
+
+for unused in range(n):
+    cons = sys.stdin.readline()
+    balance = []
+    ans = 0
+    for c in cons[:-1]:
+        if c == '(' or c == '[' or c == '{':
+            balance.append(c)
+	elif len(balance) == 0:
+            ans = 1
+            sys.stdout.write("no\n")
+            break
+	prev_brace = balance[-1]
+        if c == ')':
+            if prev_brace != '(':
+                ans = 1
+                sys.stdout.write("no\n")
+                break
+            else:
+                balance = balance[:-1]
+        if c == '}':
+            if prev_brace != '{':
+                ans = 1
+                sys.stdout.write("no\n")
+                break
+            else:
+                balance = balance[:-1]
+        if c == ']':
+            if prev_brace != '[':
+                ans = 1
+                sys.stdout.write("no\n")
+                break
+            else:
+                balance = balance[:-1]
+    if ans == 0:
+        if len(balance) == 0:
+            sys.stdout.write("yes\n")
+        else:
+            sys.stdout.write("no\n")
