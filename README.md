@@ -7,4 +7,4 @@
 + usage of different Python features
 
 Image shows predator-prey cycles:
-[!alt text](https://github.com/okalitova/PythonCourse/blob/master/ocean.png)
+![alt text](https://github.com/okalitova/PythonCourse/blob/master/ocean.png)
